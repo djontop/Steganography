@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steganography</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="index-container">
+        <div class="index-form">
+            <h1>Steganography</h1>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <label for="file">Choose an image file:</label>
+                <input type="file" name="file" id="file" accept="image/*" required>
+                <label for="message">Enter Message:</label>
+                <input type="text" name="message" required>
+                <input type="hidden" name="encryption_choice" value="4">  
+                <input type="submit" value="Hide Message">
+            </form>
+            <p>{{ message }}</p>
+        </div>
+    </div>
+</body>
+</html>
